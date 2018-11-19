@@ -1,0 +1,102 @@
+#canvas {
+  width: 100%;
+  height: calc(100vh - 60px);
+  color: #0c2461;
+}
+
+#canvas #top-content {
+  width: 100%;
+  height:30%;
+  top: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#canvas #top-content {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#canvas #top-content .profile-settings a {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #0c2461;
+  padding 10px 10px 10px 10px;
+  color: #0c2461;
+}
+
+#canvas #top-content .profile-settings a:visted {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding 10px 10px 10px 10px;
+  color: #0c2461;
+}
+
+#canvas #top-content .profile-bio {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: .5px solid #0c2461;
+  padding 10px 10px 10px 10px;
+}
+
+#canvas #top-content .profile-pic {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#canvas #bottom-content {
+  width: 100%;
+  height:70%;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #0c2461;
+}
+
+#bottom-content .title {
+  margin-top: -200px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.friends {
+  line-height: normal;
+}
+
+
+#canvas #bottom-content a {
+  font-family: 'Roboto', sans-serif;
+  color: #0c2461;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#canvas #bottom-content a:visited {
+  font-family: 'Roboto', sans-serif;
+  color: #0c2461;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}

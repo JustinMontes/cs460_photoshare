@@ -1,0 +1,93 @@
+<!-- Author: Justin Montes -->
+<!doctype html>
+<title>Profile</title>
+<link rel="stylesheet" href="/static/main.css?1.1">
+<link href="https://fonts.googleapis.com/css?family=Pattaya|Roboto" rel="stylesheet">
+<link rel="stylesheet" href="/static/profile.css?1.1">
+
+<div id="nav">
+    <ul>
+        <li><a href='/logout'>Sign Out</a> </li>
+        <li><a href='/profile'>Profile</a></li>
+        <li><a href='/index'>Home</a></li>
+    </ul>
+    <div class='search'>
+      <form id="content">
+        <input type="text" name="input" class="input" placeholder="Search">
+        <button type="reset" class="search"></button>
+      </form>
+    </div>
+    <div class='pseudo-logo'>Photoshare x
+      {% if first_name %}
+        {{first_name}}
+      {% endif %}</div>
+</div>
+
+<div id="canvas">
+
+  <div id='top-content'>
+
+    {% if not profile_pic %}
+    <div class='profile-pic' style="background-image: url('/static/twitter-egg.jpg'); background-size: cover;"></div>
+    {% endif %}
+
+    {% if profile_pic %}
+      <div class='profile-pic'>
+        {{profile_pic}}
+      </div>
+    {% endif %}
+
+    <div class='profile-name'>
+      {% if first_name %}
+        <h4>{{first_name}}</h4>
+      {% endif %}
+    </div>
+
+    <div class='profile-settings'> <a href="/settings">Settings</a> </div>
+
+    <div class='profile-bio'>
+      About Me: <br>
+      {% if bio %}
+        <h4>{{bio}}</h4>
+      {% endif %}
+    </div>
+
+    <div class='friends'>
+      Friends: {{num_friends}}
+      {% if friends %}
+        {%for friend in friends%}
+          <h5>{{friend[0]}} {{friend[1]}}</h5>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    </div>
+
+  </div>
+
+<!-- Bottom Content Start -->
+
+  <div id='bottom-content'>
+    <div class='title'>
+      Your Albums
+      {% if albums %}
+          {%for album in albums%}
+            <h5>{{album[0]}}</h5>
+          {% endfor %}
+          {% if photos %}
+            {% for photo in photos %}
+              <img class='posts' src="data:;base64,{{photo[0]}}"/>
+              {% if likes %}
+                <p>Likes: {{likes[0][0]}}</p>
+              {% endif %}
+          {% endfor %}
+          {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='upload.js') }}"></script>

@@ -1,0 +1,47 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title>Upload a photo!</title>
+</head>
+    <body>
+      <link rel="stylesheet" href="/static/main.css?1.1">
+      <link rel="stylesheet" href="/static/upload.css?1.1">
+    <link href="https://fonts.googleapis.com/css?family=Pattaya|Roboto" rel="stylesheet">
+    <div id="nav">
+        <ul>
+            <li><a href='/logout'>Sign Out</a> </li>
+            <li><a href='/profile'>Profile</a></li>
+            <li><a href='/'>Home</a></li>
+        </ul>
+        <div class='search'>
+          <form id="content">
+            <input type="text" name="input" class="input" placeholder="Search">
+            <button type="reset" class="search"></button>
+          </form>
+        </div>
+        <div class='pseudo-logo'>Photoshare x Justin</div>
+    </div>
+        <div class="title">
+            <h1>Upload a photo to Photoshare</h1>
+        </div>
+          <div class='upload-container'>
+            <form method="post" enctype="multipart/form-data" action="/upload">
+                <label for="photo">Select photo:</label>
+                <input type="file" name="photo" required='true' /><br />
+                <label for="album">Album Title:</label>
+                <input type="text" name="album" required='true' /><br />
+                <label for="caption">Please caption:</label>
+                <label for="tags">Add tags seprated by commas:</label>
+                <input type="text" name="tags" required='true' /><br />
+                <input type="text" name="caption" required='true' /><br />
+                <input type="submit" value="Upload" />
+            </form>
+          </div>
+          <div class='post-button'>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+                  <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 14H6v-2h2v2zm0-3H6V9h2v2zm0-3H6V6h2v2zm7 6h-5v-2h5v2zm3-3h-8V9h8v2zm0-3h-8V6h8v2z"/>
+              </svg>
+            </a>
+          </div>
+
+    </body>

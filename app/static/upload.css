@@ -1,0 +1,64 @@
+h1 {
+  color: #0652DD;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+#modal-container {
+  width: 500px;
+  height: 250px;
+  border-radius: 5px;
+  margin: auto;
+  text-align: left;
+  color: #192a56;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  vertical-align: center;
+  margin-left: 35%;
+  margin-top: 15%;
+  bac
+}
+
+#modal-container a {
+  text-decoration: none;
+  float: right;
+
+}
+
+#modal-container a:visited{
+  text-decoration: none;
+  float: right;
+  color: #192a56;
+  font-size: 10px;
+}
+
+
+#modal {
+  border-radius: 5px;
+  width: 450px;
+  height: 210px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#modal:hover {
+
+}
+
+.make_post {
+  margin-left: 150px;
+  margin-top: 20px;
+  border: none;
+  width:100px;
+  height:35px;
+  color: white;
+  background-color: #0097e6;
+  border-radius: 5px;
+}

@@ -1,0 +1,123 @@
+<!-- Author: Justin Montes -->
+<!doctype html>
+<title>Photoshare</title>
+<link rel="stylesheet" href="/static/main.css?1.1">
+<link rel="stylesheet" href="/static/upload.css?1.1">
+<link href="https://fonts.googleapis.com/css?family=Pattaya|Roboto" rel="stylesheet">
+<div id="nav">
+    <ul>
+        <li><a href='/logout'>Sign Out</a> </li>
+        <li><a href='/profile'>Profile</a></li>
+        <li><a href='/index'>Home</a></li>
+    </ul>
+    <div class='search'>
+      <form id="content" type="submit">
+        <input type="text" name="input" class="input" method="POST" placeholder="Search">
+        <button type="reset" class="search"></button>
+      </form>
+    </div>
+    <div class='pseudo-logo'>Photoshare x
+      {% if first_name %}
+        {{first_name}}
+      {% endif %}
+    </div>
+</div>
+
+<h1 class='app_title'> Home Feed </h1>
+
+<div class='feed-container'>
+  <div id='feed'>
+    {% for photo in feed %}
+    <div class='photo_header'>
+      <a href='#' class='post_author'>Author</a>
+    </div>
+    <img class='posts' src="data:;base64,{{photo[0]}}"/>
+    <div class='photo_footer'>
+      {% if likes %}
+        <p id='like'></p>
+        <p>Likes: {{likes}}</p>
+      {% endif %}
+
+      <form id="comment" type="submit">
+        <button type="submit" class="like">Like</button>
+        <input type="text" name="comments" class="comment_input" method="POST"  action='/like' placeholder="Write a comment!">
+        <button type="submit" class="comment">Comment</button>
+      </form>
+
+      {% if comments %}
+      <p style="margin-left:100px;">Comments:</p> <br>
+        {% for comment in comments %}
+          <p>{{comment[0]}}</p>
+        {% endfor %}
+      {% endif %}
+
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+<div id='sidebar'>
+
+  <div id='top_posts' class="side-item">
+
+    <h1 class='side_title'>Top Albums</h1>
+    <ol class='top5'>
+      {% if topAlbums %}
+        {% for albums in topAlbums %}
+          <li>{{albums}}</li>
+        {% endfor %}
+      {% endif %}
+    </ol>
+  </div>
+
+  <div id='top_users' class="side-item">
+    <h1 class='side_title'> Top Users </h1>
+    <ol class='top5'>
+      {% if topUsers %}
+        {% for users in topUsers %}
+          <li>{{users}}</li>
+        {% endfor %}
+      {% endif %}
+    </ol>
+  </div>
+
+  <div id='reccomendations' class="side-item">
+    <h1 class='side_title'>Recommendations For You </h1>
+    <ol class='top5'>
+      <{% if topTags %}
+        {% for tags in topTags %}
+          <li>{{tags}}</li>
+        {% endfor %}
+      {% endif %}
+    </ol>
+  </div>
+
+</div>
+
+<div id='modal-container'>
+  <div id='modal'>
+    <a href="#" class='exit_btn'> x </a>
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <label for="photo">Select photo:</label>
+        <input type="file" name="photo" required='true' /><br />
+        <label for="album">Album Title:</label>
+        <input type="text" name="album" required='true' /><br />
+        <label for="caption">Please caption:</label>
+        <input type="text" name="tags" required='true' /><br />
+        <label for="tags">Add tags seprated by commas:</label>
+        <input type="text" name="caption" required='true' /><br />
+        <input class='make_post' type="submit" value="Upload"/>
+    </form>
+  </div>
+</div>
+
+<div id='post-button'>
+  <a href="#">
+    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 14H6v-2h2v2zm0-3H6V9h2v2zm0-3H6V6h2v2zm7 6h-5v-2h5v2zm3-3h-8V9h8v2zm0-3h-8V6h8v2z"/>
+    </svg>
+  </a>
+</div>
+
+<script src="{{ url_for('static', filename='upload.js') }}"></script>
