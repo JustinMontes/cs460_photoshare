@@ -26,10 +26,10 @@ app = Flask(__name__)
 app.secret_key = 'EASDFGHTYJ^%$WESRGWEWGESD'  # Change this!
 
 #These will need to be changed according to your creditionals
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'x12-51823' #CHANGE THIS TO YOUR MYSQL PASSWORD
-app.config['MYSQL_DATABASE_DB'] = 'photoshare'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_USER'] = ''#CHANGE THIS TO YOUR MYSQL USERNAME
+app.config['MYSQL_DATABASE_PASSWORD'] = '' #CHANGE THIS TO YOUR MYSQL PASSWORD
+app.config['MYSQL_DATABASE_DB'] = 'photoshare'#CHANGE THIS TO YOUR MYSQL DATABASE NAME
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'#CHANGE THIS TO YOUR MYSQLDATABASE HOST
 mysql.init_app(app)
 
 #begin code used for login
